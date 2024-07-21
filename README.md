@@ -1,1 +1,1 @@
-# gitops
+# gitops config

@@ -14,7 +14,7 @@ spec:
         app: olm-utils
     spec:
       containers:
-      - image: icr.io/cpopen/cpd/olm-utils-v2:4.8.4
+      - image: icr.io/cpopen/cpd/olm-utils-v2:4.8.5
         name: olm-utils
         ports:
         - containerPort: 80

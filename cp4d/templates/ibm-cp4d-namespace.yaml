@@ -3,8 +3,6 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: "{{ .Values.cpd_operators_namespace }}"
-  annotations:
-    argocd.argoproj.io/sync-wave: "080"
   labels:
     argocd.argoproj.io/managed-by: {{ .Values.argo_namespace }}
 
@@ -13,8 +11,6 @@ apiVersion: v1
 kind: Namespace
 metadata:
     name: "{{ .Values.cpd_instance_namespace }}"
-    annotations:
-      argocd.argoproj.io/sync-wave: "080"
     labels:
       argocd.argoproj.io/managed-by: {{ .Values.argo_namespace }}
 
@@ -23,7 +19,5 @@ apiVersion: v1
 kind: Namespace
 metadata:
     name: "{{ .Values.cpd_cs_control_namespace }}"
-    annotations:
-      argocd.argoproj.io/sync-wave: "080"
     labels:
       argocd.argoproj.io/managed-by: {{ .Values.argo_namespace }}

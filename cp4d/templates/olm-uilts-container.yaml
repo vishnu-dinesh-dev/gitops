@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: olm-utils
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: olm-utils
+  template:
+    metadata:
+      labels:
+        app: olm-utils
+    spec:
+      containers:
+      - image: icr.io/cpopen/cpd/olm-utils-v2:4.8.4
+        name: olm-utils
+        ports:
+        - containerPort: 80

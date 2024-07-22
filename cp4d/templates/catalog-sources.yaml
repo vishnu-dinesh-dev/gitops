@@ -1,0 +1,18 @@
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: cpd-platform
+  namespace: "{{ .Values.cpd_operators_namespace }}"
+  annotations:
+    argocd.argoproj.io/sync-wave: "081"
+
+---
+spec:
+  displayName: ibm-cp-datacore-4.0.0+20231213.115030
+  image: icr.io/cpopen/ibm-cpd-platform-operator-catalog@sha256:01bc0f165348d911d134a5bbd36bbe5f9c5a53877696b005d9a19b5d74623b4d
+  publisher: IBM
+  sourceType: grpc
+  updateStrategy:
+    registryPoll:
+      interval: 30m0s

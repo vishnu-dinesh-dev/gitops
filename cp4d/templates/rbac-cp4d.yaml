@@ -1,0 +1,17 @@
+---
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: ibm-namespace-scope-operator
+  namespace: {{ .Values.cpd_operators_namespace }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "082"
+
+---
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: "{{ .Values.cpd_admin_login_sa }}"
+  namespace: {{ .Values.cpd_instance_namespace }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "082"

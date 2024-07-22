@@ -1,0 +1,15 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cp4d
+  namespace: {{ .Values.argo.namespace }}
+spec:
+  project: default
+  source:
+    repoURL: {{ .Values.cp4dConfig.name }}
+    targetRevision: {{ .Values.cp4dConfig.targetRevision }}
+    path: {{ .Values.cp4dConfig.path }}
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: {{ .Values.cp4dConfig.namespace }}

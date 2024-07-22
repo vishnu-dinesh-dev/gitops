@@ -1,0 +1,9 @@
+argo:
+  namespace: "argo-cd"
+
+cp4dConfig:
+  name: cp4d
+  repo: https://github.com/vishnu-dinesh-dev/gitops.git
+  targetRevision: main
+  path: cp4d
+  namespace: cp4d
